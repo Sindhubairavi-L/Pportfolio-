@@ -1,0 +1,545 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #E0E0E0;
+}
+
+body {
+    background-color: #0a0f2c;
+    color: #f1f1f1;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+    padding: 20px;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #d1d1ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #f1f1f1;
+    transform: scale(1.1);
+}
+
+nav ul li a::before, nav ul li a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: #d1d1ff;
+    transition: width 0.3s;
+}
+
+nav ul li a::before { bottom: -6px; left: 0; }
+nav ul li a::after { top: -6px; right: 0; }
+
+nav ul li a:hover::before, nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Section Styling */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid #222;
+    position: relative;
+}
+
+.section h2 {
+    color: #d1d1ff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.section h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #d1d1ff;
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* Animated Titles and Subtitles */
+.animated-title {
+    font-size: 2.5rem;
+    color: #f1f1f1;
+    animation: slideIn 2s ease-in-out;
+    text-transform: uppercase;
+}
+
+.animated-subtitle {
+    font-size: 1.5rem;
+    color: #a3a3ff;
+    animation: fadeInUp 2s ease-in;
+    margin-bottom: 20px;
+}
+
+/* Links with Hover Animation */
+.links a {
+    color: #d1d1ff;
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px 25px;
+    background-color: #222;
+    border: 2px solid #333;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.links a:hover {
+    background-color: #333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Technical Skills */
+#skills ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.5s ease-in-out;
+    padding: 20px;
+}
+
+#skills li {
+    background-color: #1c1c3b;
+    padding: 15px 25px;
+    border: 1px solid #2a2a5c;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#skills li:hover {
+    background-color: #2a2a5c;
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Soft Skills & Interest */
+#soft-skills ul li {
+    animation: bounceIn 2s;
+    background-color: #111;
+    border: 1px solid #444;
+    padding: 15px 20px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#soft-skills ul li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Internships */
+#internships p {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    animation: pulse 1.5s infinite;
+    margin: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Projects with sliding card effect */
+#projects ul {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 30px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#projects li {
+    flex: 0 0 300px;
+    background-color: #1c1c3b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#projects li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Achievements with box effect */
+#achievements ul li {
+    background-color: #0a0f2c;
+    border: 1px solid #2a2a5c;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+#achievements ul li:hover {
+    background-color: #1c1c3b;
+    transform: scale(1.02);
+}
+
+#achievements ul li:active {
+    background-color: #333;
+    transform: scale(1.08);
+}
+
+/* Contact Section */
+#contact {
+    background-color: #222;
+    color: #f1f1f1;
+    padding: 50px 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+}
+
+#contact a {
+    color: #d1d1ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#contact a:hover {
+    color: #a3a3ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #skills ul {
+        flex-direction: column;
+    }
+
+    #projects ul {
+        flex-direction: column;
+    }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Additional Styles for Section Highlights */
+.section-highlight {
+    background-color: #1c1c3b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #2a2a5c;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.section-highlight:hover {
+    transform: scale(1.02);
+    background-color:#1a1a40;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Unique Button Styles */
+.button {
+    background-color: #1c1c3b;
+    color: #d1d1ff;
+    border: 2px solid #444;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #444;
+    transform: translateY(-5px);
+}
+
+/* Card Hover Effect */
+.card {
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Overlay Effect on Cards */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0a0f2c;
+    color: #d1d1ff;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Specific Animation for Achievements */
+#achievements ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Flexbox for Achievements */
+#achievements li {
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #1c1c3b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+#achievements li:hover {
+    transform: scale(1.02);
+}
+
+/* Unique Animation for Internships */
+#internships {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+#internships h3 {
+    margin-bottom: 20px;
+    color: #d1d1ff;
+}
+
+/* Projects Section */
+#projects {
+    background-color: #2a2a2a; /* Dark background for contrast */
+    padding: 50px 20px; /* Generous padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Depth effect */
+}
+
+#projects h2 {
+    color: #d1d1ff; /* Title color */
+    font-size: 2rem; /* Font size for the title */
+    text-align: center; /* Centering the title */
+    margin-bottom: 30px; /* Space below the title */
+    animation: fadeIn 1.5s ease-in; /* Animation for the title */
+}
+
+.project-item {
+    background-color: #1c1c3b; /* Item background color */
+    padding: 20px; /* Inner padding */
+    margin: 10px 0; /* Space between items */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.3s; /* Smooth scale effect */
+    position: relative; /* For animation positioning */
+    overflow: hidden; /* To contain the animated shadow */
+}
+
+.project-item:hover {
+    transform: scale(1.02); /* Scale up on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.project-item h3 {
+    color: #d1d1ff; /* Item title color */
+    margin-bottom: 10px; /* Space below the item title */
+    font-size: 1.5rem; /* Font size for item title */
+}
+
+.project-item p {
+    color: #f1f1f1; /* Text color for item description */
+    font-size: 1.1rem; /* Font size for description */
+    line-height: 1.5; /* Line height for better readability */
+}
+
+.project-link {
+    display: inline-block; /* Make it a block for better alignment */
+    background-color: #ff4d4d; /* Red link button color */
+    color: #ffffff; /* White text color */
+    padding: 10px 15px; /* Inner padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth color transition */
+    margin-top: 10px; /* Space above the link */
+}
+
+.project-link:hover {
+    background-color: #e60000; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #projects {
+        padding: 30px 15px; /* Adjust padding for mobile */
+    }
+
+    .project-item h3 {
+        font-size: 1.3rem; /* Smaller title size on mobile */
+    }
+
+    .project-item p {
+        font-size: 1rem; /* Smaller paragraph size on mobile */
+    }
+
+    .project-link {
+        font-size: 0.9rem; /* Smaller link size on mobile */
+    }
+}
+/* Animation Effects for Projects */
+.project-details {
+    display: none;
+    position: absolute;
+    background-color: #1c1c3b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.projects li:hover .project-details {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Miscellaneous Custom Styles */
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+/* Add some custom colors for hover effects */
+a {
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #a3a3ff;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    #skills ul {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .section {
+        padding: 60px 10px;
+    }
+
+    .section-highlight {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
